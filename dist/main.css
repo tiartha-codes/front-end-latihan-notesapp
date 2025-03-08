@@ -1,0 +1,277 @@
+/* Reset default padding dan margin */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ------- Style global ------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(36, 34, 34);
+}
+
+header {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  min-height: 100vh;
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  padding-block: 32px;
+  padding-inline: 16px;
+  margin-inline: auto;
+}
+
+.title-section {
+  margin-block-end: 2rem;
+  font-size: 1.2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  display: block;
+}
+
+section > .title-section {
+  margin-block-end: 2rem;
+  font-size: 1.2em;
+}
+
+/* ------- Style untuk app-bar ------- */
+app-bar {
+  background-color: #151616;
+  color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+app-bar h2 {
+  margin: 0;
+}
+
+/* ------- Style untuk note-item ------- */
+note-item {
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  padding: 16px;
+}
+
+note-item note-info {
+  padding: 16px 24px;
+}
+
+note-item note-info__title h2 {
+  font-weight: lighter;
+}
+
+note-item note-info__description {
+  display: -webkit-box;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; 
+}
+
+/* ------- Style untuk note-form ------- */
+note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;   
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+note-form .label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+note-form .input[type="text"],
+note-form .textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 1em;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+note-form input[type="text"]:focus,
+note-form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+  background-color: #fff;
+}
+
+note-form .submit-button {
+  padding: 10px 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+.note-form .submit-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* ------- Style untuk footer-bar ------- */
+footer-bar {
+  display: block;
+  padding: 5px; 
+  background-color: #151616;
+  color: #fff; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em; 
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+footer-bar p {
+  padding: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2px;
+}
+
+#noteListContainer {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px rgba(60, 64, 67, 0.15);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#noteListContainer .title-section {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+#noteListContainer note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#archivedNoteListContainer {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px rgba(60, 64, 67, 0.15);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#archivedNoteListContainer .title-section {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+#archivedNoteListContainer note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.note-item {
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+}
+
+.note-info__title h2 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.note-info__description p {
+    margin: 10px 0;
+}
+
+button {
+    margin-right: 8px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#deleteButton {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+#archiveButton, #unarchiveButton {
+    background-color: #4caf50;
+    color: white;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-list-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title-section h2 {
+  font-size: 1.5em;
+  margin: 0;
+  color: #333;
+}

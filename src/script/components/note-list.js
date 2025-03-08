@@ -1,4 +1,4 @@
-// Import class Utils from utils.js
+// Import class Utils dari utils.js
 import Utils from '../utils.js';
 
 // Mendefinisikan class NoteList yang mewarisi sifat dari HTMLElement
@@ -20,10 +20,12 @@ class NoteList extends HTMLElement {
     constructor() {
         super();
 
-        this._shadowRoot = this.attachShadow({ mode: 'open' }); // Pasang shadow root pada elemen ini
-        this._style = document.createElement('style'); // Buat elemen style
+        // Pasang shadow root pada elemen ini
+        this._shadowRoot = this.attachShadow({ mode: 'open' });
+        // Buat elemen style
+        this._style = document.createElement('style');
 
-        // Memanggil Function render
+        // Memanggil fungsi render
         this.render();
     }
 
@@ -42,7 +44,7 @@ class NoteList extends HTMLElement {
         `;
     }
 
-    // Set dan Get column dan gutter
+    // Set dan Get untuk properti column
     set column(value) {
         // Definisikan column
         const newValue = Number(value);
@@ -55,6 +57,7 @@ class NoteList extends HTMLElement {
         return this._column;
     }
 
+    // Set dan Get untuk properti gutter
     set gutter(value) {
         // Definisikan gutter
         const newValue = Number(value);
@@ -67,17 +70,19 @@ class NoteList extends HTMLElement {
         return this._gutter;
     }
 
-    // Mendefinisikan fungsi _emptyContent yang berisi innerHTML dari shadowRoot agar kosong
+    // Mendefinisikan fungsi _emptyContent yang mengosongkan innerHTML dari shadowRoot
     _emptyContent() {
         this._shadowRoot.innerHTML = '';
     }
 
+    // Fungsi untuk merender tampilan elemen
     render() {
         this._emptyContent(); // Panggil fungsi _emptyContent
         this._updateStyle(); // Panggil fungsi _updateStyle
 
         // Menambahkan elemen style ke dalam shadow DOM
         this._shadowRoot.appendChild(this._style);
+        // Menambahkan konten HTML ke dalam shadow DOM
         this._shadowRoot.innerHTML += `
             <div class="list">
                 <slot></slot>
@@ -87,7 +92,7 @@ class NoteList extends HTMLElement {
 
     // Mendefinisikan fungsi attributeChangedCallback
     attributeChangedCallback(name, oldValue, newValue) {
-        // Definisikan fungsi attributeChangedCallback
+        // Memperbarui nilai atribut yang berubah
         switch (name) {
             case 'column':
                 this.column = newValue;
@@ -97,10 +102,11 @@ class NoteList extends HTMLElement {
                 break;
         }
 
+        // Render ulang elemen
         this.render();
     }
 
-    // Mendefinisikan fungsi connectedCallback dan memanggil Function render
+    // Mendefinisikan fungsi connectedCallback dan memanggil fungsi render
     connectedCallback() {
         this.render();
     }

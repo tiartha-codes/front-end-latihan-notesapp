@@ -1,6 +1,3 @@
-// Mengimpor file CSS eksternal
-import '../../styles/style.css';
-
 // Mendefinisikan custom element app-bar
 class AppBar extends HTMLElement {
     // Mendeklarasikan properti _shadowRoot dengan nilai null
@@ -29,10 +26,21 @@ class AppBar extends HTMLElement {
 
         this._shadowRoot.innerHTML += `
             <style>
-                @import url('../../styles/style.css');
+                .app-bar {
+                    background-color: #151616;
+                    color: white;
+                    padding: 3px;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 56px;
+                    margin-bottom: 20px;
+                }
             </style>
-            <div>
-                <h1 class="brand-name">Simple Notes APP</h1>
+            <div class="app-bar">
+                <h1 class="brand-name">Notes APP</h1>
             </div>
         `;
     }

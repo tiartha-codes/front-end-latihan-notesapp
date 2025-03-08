@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes App</title>
-</head>
-<body>
-    <header>
-        <app-bar></app-bar>
-    </header>
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <style>
+        body {
+          font-family: 'Roboto', sans-serif;
+          color: rgb(36, 34, 34);
+        }
+        main {
+          min-height: 100vh;
+        }
+        .container {
+          max-width: 1200px;
+          padding-block: 32px;
+          padding-inline: 16px;
+          margin-inline: auto;
+        }
+        .title-section {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .title-section h2 {
+          font-size: 1.5em;
+          margin: 20px auto 20px auto;
+          color: #333;
+        }
+    </style>
+  </head>
+  <body>
+    <app-bar></app-bar>
     <main>
-        <div class="container">
-            <note-form></note-form>
-            <section id="notes" class="notes">
-                <div id="noteListContainer" class="note-list-container">
-                    <note-list></note-list>
-                </div>
-                <div id="archivedNoteListContainer" class="note-list-container">
-                    <note-list></note-list>
-                </div>
-            </section>
-        </div>
+      <div class="container">
+        <section id="notes" class="notes">
+          <note-form></note-form>
+          <div class="title-section">
+            <h2>Notes List</h2>
+          </div>
+          <div id="noteListContainer" class="note-list-container"></div>
+        </section>
+      </div>
     </main>
-    <footer>
-        <footer-bar></footer-bar>
-    </footer>
-</body>
+    <footer-bar></footer-bar>
+  </body>
 </html>
